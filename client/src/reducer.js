@@ -3,7 +3,8 @@ import * as Actions from "./actions";
 const initialState = {
   results: [],
   isFetching: false,
-  error: null
+  error: null,
+  description: "Select a book to see description"
 };
 
 export function booksApp(state = initialState, action) {
@@ -26,7 +27,15 @@ export function booksApp(state = initialState, action) {
         isFetching: false,
         error: action.error
       };
+    case Actions.SELECT_BOOK_SUCCESS:
+      return {
+        ...state,
+        description: action.data
+      };
     default:
       return state;
   }
 }
+
+// export const SELECT_BOOK_SUCCESS = "SELECT_BOOK_SUCCESS";
+// export const SELECT_BOOK_FAILURE = "SELECT_BOOK_FAILURE";
