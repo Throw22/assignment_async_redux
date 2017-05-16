@@ -1,19 +1,13 @@
 import * as Actions from "./actions";
 
-initialState = {
+const initialState = {
   results: [],
   isFetching: false,
-  error: null,
-  searchType: null
+  error: null
 };
 
 export function booksApp(state = initialState, action) {
   switch (action.type) {
-    case Actions.SET_SEARCH_TYPE:
-      return {
-        ...state,
-        searchType: action.data
-      };
     case Actions.GET_BOOKS_SUCCESS:
       return {
         ...state,

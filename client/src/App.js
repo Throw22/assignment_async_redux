@@ -1,9 +1,11 @@
-import React, {Component} from "react";
-import BookContainer from "./BookContainer";
+import React from "react";
+import BookContainer from "./BookListContainer";
+import SearchContainer from "./SearchContainer";
 
 const App = () => {
   return (
     <div className="App">
+      <SearchContainer />
       <BookContainer />
     </div>
   );

@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import BookList from "./BookList";
 
 class BookListContainer extends Component {
   render() {
-    const { results, isFetching } = this.props;
+    const {results, isFetching} = this.props;
 
     return <BookList results={results} isFetching={isFetching} />;
   }
