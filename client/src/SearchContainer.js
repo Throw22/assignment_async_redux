@@ -1,13 +1,16 @@
-import React, {Component} from "react";
-import {connect} from "react-redux";
-import SearchGroup from "./SearchGroup";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import SearchGroup from './SearchGroup';
+import { getBooks } from './actions';
 
 class SearchContainer extends Component {
   render() {
+    const { getBooksByAuthor, getBooksByTitle } = this.props;
+
     return (
       <SearchGroup
-        onAuthorKeyUp={this.props.getBooksByAuthor}
-        onTitleKeyUp={this.props.getBooksByTitle}
+        onAuthorSearch={getBooksByAuthor}
+        onTitleSearch={getBooksByTitle}
       />
     );
   }
@@ -15,11 +18,15 @@ class SearchContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getBooksByAuthor: () => {
-      dispatch(getBooksByAuthor());
+    getBooksByAuthor: e => {
+      if (e.keyCode === 13) {
+        dispatch(getBooks(e.target.value, 'author'));
+      }
     },
-    getBooksByTitle: () => {
-      dispatch(getBooksByTitle());
+    getBooksByTitle: e => {
+      if (e.keyCode === 13) {
+        dispatch(getBooks(e.target.value, 'title'));
+      }
     }
   };
 };

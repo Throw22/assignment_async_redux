@@ -1,7 +1,7 @@
-import React from "react";
-import Book from "./Book";
+import React from 'react';
+import Book from './Book';
 //will need to map results to books
-const bookCards = ({results}) =>
+const bookCards = ({ results }) =>
   results.map(function(book) {
     return (
       <Book
@@ -14,10 +14,10 @@ const bookCards = ({results}) =>
     );
   });
 
-const BookList = ({results, isFetching}) => {
+const BookList = ({ results, isFetching }) => {
   return (
     <div className="BookList">
-      {isFetching ? <p>Loading...</p> : {bookCards}}
+      {isFetching ? <p>Loading...</p> : bookCards}
     </div>
   );
 };
