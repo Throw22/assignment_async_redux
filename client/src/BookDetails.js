@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Book = props => {
-  const {
-    title,
-    author,
-    // imageUrl,
-    smallImageUrl,
-    avgRating
-  } = props;
+const BookDetails = props => {
+  // const {
+  //   title,
+  //   author,
+  //   // imageUrl,
+  //   smallImageUrl,
+  //   avgRating
+  // } = props;
 
   return (
     <div className="Book card">

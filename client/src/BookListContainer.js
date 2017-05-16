@@ -1,12 +1,15 @@
-import React, {Component} from "react";
-import {connect} from "react-redux";
-import BookList from "./BookList";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import BookList from './BookList';
 
 class BookListContainer extends Component {
   render() {
-    const {results, isFetching} = this.props;
-
-    return <BookList results={results} isFetching={isFetching} />;
+    const { results, isFetching } = this.props;
+    return (
+      <div>
+        <BookList results={results} isFetching={isFetching} />;
+      </div>
+    );
   }
 }
 

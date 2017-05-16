@@ -1,8 +1,9 @@
 import React from 'react';
 import Book from './Book';
 
-const bookCards = ({ results }) =>
-  results.map(function(book) {
+const BookList = ({ results, isFetching }) => {
+  const bookCards = results.map(function(book) {
+    console.log('One book:', book);
     return (
       <Book
         title={book.best_book[0].title[0]}
@@ -14,10 +15,9 @@ const bookCards = ({ results }) =>
     );
   });
 
-const BookList = ({ results, isFetching }) => {
   return (
-    <div className="BookList">
-      {isFetching ? <p>Loading...</p> : bookCards}
+    <div className="BookList card-deck">
+      {bookCards}
     </div>
   );
 };
