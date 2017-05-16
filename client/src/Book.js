@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Book = props => {
   const {
@@ -14,7 +14,7 @@ const Book = props => {
   return (
     <div className="Book card">
       <img src={smallImageUrl} alt={title} />
-      <h3><a href="#" onClick={selectBook} value={id}>{title}</a></h3>
+      <h3><a href="#" onClick={selectBook} id={id}>{title}</a></h3>
       <h4>{author}</h4>
       <p>{avgRating}</p>
     </div>

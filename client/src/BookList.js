@@ -1,9 +1,8 @@
-import React from "react";
-import Book from "./Book";
+import React from 'react';
+import Book from './Book';
 
-const BookList = ({results, isFetching, selectBook}) => {
+const BookList = ({ results, isFetching, selectBook }) => {
   const bookCards = results.map(function(book) {
-    console.log("One book:", book);
     return (
       <Book
         title={book.best_book[0].title[0]}

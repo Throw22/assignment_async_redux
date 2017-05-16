@@ -1,17 +1,17 @@
-import React, {Component} from "react";
-import {connect} from "react-redux";
-import BookList from "./BookList";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import BookList from './BookList';
+import { selectBook } from './actions';
 
 class BookListContainer extends Component {
   render() {
-    const {results, isFetching, selectBook} = this.props;
+    const { results, isFetching, selectBook } = this.props;
     return (
       <div>
         <BookList
           results={results}
           isFetching={isFetching}
           selectBook={selectBook}
-          selectedBook={selectedBook}
         />
       </div>
     );
@@ -28,9 +28,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     selectBook: e => {
-      dispatch(selectBook(e.target.value));
+      dispatch(selectBook(e.target.id));
     }
   };
 };
 
-export default connect(mapStateToProps)(BookListContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(BookListContainer);

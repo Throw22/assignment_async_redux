@@ -49,13 +49,7 @@ app.get('/api/search/title/:query', (req, res, next) => {
         if (err) {
           throw new Error(err);
         }
-        console.log(
-          JSON.stringify(
-            result.GoodreadsResponse.search[0].results[0].work,
-            null,
-            2
-          )
-        );
+
         res.json(result.GoodreadsResponse.search[0].results[0].work);
       });
     })
@@ -77,16 +71,20 @@ app.get('/api/search/author/:query', (req, res, next) => {
         if (err) {
           throw new Error(err);
         }
-        console.log(
-          JSON.stringify(
-            result.GoodreadsResponse.search[0].results[0].work,
-            null,
-            2
-          )
-        );
         res.json(result.GoodreadsResponse.search[0].results[0].work);
       });
     })
+    .catch(error => {
+      next(error);
+    });
+});
+
+app.get('/api/search/description/:query', (req, res, next) => {
+  let query = req.params.query;
+  fetch(`${baseUrl}/book/show.JSON?key=${API_CLIENT_KEY}&id=${query}`)
+    .then(checkStatus)
+    .then(response => response.json())
+    .then(json => res.json(json))
     .catch(error => {
       next(error);
     });

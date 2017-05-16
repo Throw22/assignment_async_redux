@@ -1,10 +1,10 @@
-import * as Actions from "./actions";
+import * as Actions from './actions';
 
 const initialState = {
   results: [],
   isFetching: false,
   error: null,
-  description: "Select a book to see description"
+  description: 'Select a book to see description'
 };
 
 export function booksApp(state = initialState, action) {
@@ -28,9 +28,15 @@ export function booksApp(state = initialState, action) {
         error: action.error
       };
     case Actions.SELECT_BOOK_SUCCESS:
+      console.log(action.data);
       return {
         ...state,
         description: action.data
+      };
+    case Actions.SELECT_BOOK_FAILURE:
+      return {
+        ...state,
+        error: action.error
       };
     default:
       return state;
