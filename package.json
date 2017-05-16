@@ -2,7 +2,7 @@
   "name": "assignment_async_redux",
   "version": "1.0.0",
   "description": "Reading is FUNdamental... for learning async actions in Redux",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "dotenv": "^4.0.0",
     "es6-promise": "^4.1.0",
