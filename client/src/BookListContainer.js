@@ -7,7 +7,7 @@ class BookListContainer extends Component {
     const { results, isFetching } = this.props;
     return (
       <div>
-        <BookList results={results} isFetching={isFetching} />;
+        <BookList results={results} isFetching={isFetching} />
       </div>
     );
   }
