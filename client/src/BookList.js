@@ -1,6 +1,6 @@
 import React from 'react';
 import Book from './Book';
-//will need to map results to books
+
 const bookCards = ({ results }) =>
   results.map(function(book) {
     return (

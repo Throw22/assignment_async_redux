@@ -23,6 +23,7 @@ export function getBooksFailure(error) {
 }
 
 export function getBooks(query, type) {
+  console.log('Getting books');
   return dispatch => {
     dispatch(getBooksRequest());
     fetch(`/api/search/${type}/${query}`)
@@ -33,6 +34,8 @@ export function getBooks(query, type) {
         return response.json();
       })
       .then(json => {
+        console.log('Response:', json);
+
         dispatch(getBooksSuccess(json));
       })
       .catch(err => {

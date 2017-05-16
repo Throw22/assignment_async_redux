@@ -19,12 +19,13 @@ class SearchContainer extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     getBooksByAuthor: e => {
-      if (e.keyCode === 13) {
+      console.log(e.key);
+      if (e.key === 'Enter') {
         dispatch(getBooks(e.target.value, 'author'));
       }
     },
     getBooksByTitle: e => {
-      if (e.keyCode === 13) {
+      if (e.key === 'Enter') {
         dispatch(getBooks(e.target.value, 'title'));
       }
     }
